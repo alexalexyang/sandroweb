@@ -26,7 +26,7 @@ const SEO: NextPage<Props> = ({ pageTitle, description, image }) => {
   }
 
   const pageImage = image ?? {
-    url: `${appUrl}/vercel.svg`,
+    url: `${appUrl}/photos/01-02.jpg`,
     width: 400,
     height: 400,
     alt: `${appName} logo`,
@@ -43,6 +43,9 @@ const SEO: NextPage<Props> = ({ pageTitle, description, image }) => {
         description: pageDescription,
         images: [pageImage],
         site_name: appName,
+      }}
+      twitter={{
+        cardType: "summary",
       }}
       noindex={false}
       nofollow={false}

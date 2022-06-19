@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NextPage } from "next";
+import SEO from "../components/seo";
 import { breakpoints } from "../styles/constants";
+import { randColor } from "../styles/util";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -34,6 +36,19 @@ const PhotosWrapper = styled.div`
   width: 100%;
 `;
 
+const IconWrapper = styled.div`
+  height: 1rem;
+  width: 1rem;
+  bottom: 0;
+  right: 0;
+  font-size: 1rem;
+
+  :hover {
+    background-color: ${() => randColor()};
+    border-radius: 50%;
+  }
+`;
+
 const photoFilenames = [
   "01-02",
   "01-03",
@@ -55,11 +70,15 @@ const photoFilenames = [
 const Photos: NextPage = () => {
   return (
     <>
+      <SEO pageTitle="Photos" />
       <Wrapper>
         <Col>
-          <Link href="/" aria-label="Home page">
-            🏠
-          </Link>
+          <IconWrapper>
+            <Link href="/" aria-label="Home page">
+              🏠
+            </Link>
+          </IconWrapper>
+
           <PhotosWrapper>
             {photoFilenames.map((name) => (
               <Image
