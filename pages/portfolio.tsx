@@ -10,37 +10,41 @@ import Link from "next/link";
 import { NextPage } from "next";
 import SEO from "../components/seo";
 
-const photoFilenames = [
-  "01-02",
-  "01-03",
-  "01-04",
-  "01-05",
-  "01-06",
-  "01-07",
-  "01-08",
-  "01-09",
-  "01-10",
-  "01-11",
-  "01-12",
-  "01-13",
-  "01-14",
-  "01-15",
-  "01-16",
-  "02-18",
-  "02-19",
-  "02-20",
-  "02-21",
-  "02-22",
-  "02-23",
-  "02-24",
-  "02-25",
-  "02-26",
+const portfolioFilenames = [
+  "portf-01",
+  "portf-02",
+  "portf-03",
+  "portf-04",
+  "portf-05",
+  "portf-06",
+  "portf-07",
+  "portf-08",
+  "portf-09",
+  "portf-10",
+  "portf-11",
+  "portf-12",
+  "portf-13",
+  "portf-15",
+  "portf-16",
+  "portf-17",
+  "portf-18",
+  "portf-19",
+  "portf-20",
+  "portf-21",
+  "portf-22",
+  "portf-23",
+  "portf-24",
+  "portf-25",
+  "portf-26",
+  "portf-27",
+  "portf-28",
+  "portf-29",
 ];
 
-const Photos: NextPage = () => {
+const Portfolio: NextPage = () => {
   return (
     <>
-      <SEO pageTitle="Photos" />
+      <SEO pageTitle="Portfolio" />
       <Wrapper>
         <Col>
           <IconWrapper>
@@ -50,13 +54,13 @@ const Photos: NextPage = () => {
           </IconWrapper>
 
           <PhotosWrapper>
-            {photoFilenames.map((name) => (
+            {portfolioFilenames.map((name) => (
               <Image
                 key={name}
-                src={`/photos/${name}.jpg`}
+                src={`/portfolio/${name}.jpg`}
                 alt="Picture of the author"
-                width={"694px"}
-                height={"595px"}
+                width={"1920px"}
+                height={"1080px"}
                 layout="responsive"
               />
             ))}
@@ -67,4 +71,4 @@ const Photos: NextPage = () => {
   );
 };
 
-export default Photos;
+export default Portfolio;

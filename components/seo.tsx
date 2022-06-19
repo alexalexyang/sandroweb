@@ -26,7 +26,7 @@ const SEO: NextPage<Props> = ({ pageTitle, description, image }) => {
   }
 
   const pageImage = image ?? {
-    url: `${appUrl}/photos/01-02.jpg`,
+    url: `${appUrl}/feature-image.jpg`,
     width: 400,
     height: 400,
     alt: `${appName} logo`,

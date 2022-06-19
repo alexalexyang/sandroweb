@@ -92,25 +92,21 @@ const Home: NextPage = () => {
         <OuterContainer>
           <Container>
             <IconWrapper>
+              <Link href="/portfolio" aria-label="Photos">
+                <LinkArea>
+                  👁️
+                  <span>Portfolio</span>
+                </LinkArea>
+              </Link>
+            </IconWrapper>
+
+            <IconWrapper>
               <Link href="/photos" aria-label="Photos">
                 <LinkArea>
                   📷
                   <span>Photos</span>
                 </LinkArea>
               </Link>
-            </IconWrapper>
-
-            <IconWrapper>
-              <a
-                href="https://drive.google.com/file/d/18Y6sRCaP1Ko85R_HX_CHBskTGEMK-FvZ/view?usp=sharing"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LinkArea>
-                  👁️
-                  <span>Portfolio (PDF)</span>
-                </LinkArea>
-              </a>
             </IconWrapper>
 
             <IconWrapper aria-label="Instagram">
