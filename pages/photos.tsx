@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { NextPage } from "next";
 import SEO from "../components/seo";
+import { randColor } from "../styles/util";
 
 const photoFilenames = [
   "01-02",
@@ -43,7 +44,7 @@ const Photos: NextPage = () => {
       <SEO pageTitle="Photos" />
       <Wrapper>
         <Col>
-          <IconWrapper>
+          <IconWrapper bgColor={randColor()}>
             <Link href="/" aria-label="Home page">
               🏠
             </Link>

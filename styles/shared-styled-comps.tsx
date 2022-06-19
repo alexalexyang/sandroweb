@@ -1,5 +1,4 @@
 import { breakpoints } from "./constants";
-import { randColor } from "./util";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -32,7 +31,7 @@ export const PhotosWrapper = styled.div`
   width: 100%;
 `;
 
-export const IconWrapper = styled.div`
+export const IconWrapper = styled.div<{ bgColor: string }>`
   height: 1rem;
   width: 1rem;
   bottom: 0;
@@ -40,7 +39,7 @@ export const IconWrapper = styled.div`
   font-size: 1rem;
 
   :hover {
-    background-color: ${() => randColor()};
+    background-color: ${({ bgColor }) => (bgColor ? bgColor : "lightcyan")};
     border-radius: 50%;
   }
 `;

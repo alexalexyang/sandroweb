@@ -39,7 +39,7 @@ const Container = styled.div`
   }
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.div<{ bgColor: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,7 +47,7 @@ const IconWrapper = styled.div`
   width: 50%;
 
   :hover {
-    background-color: ${() => randColor()};
+    background-color: ${({ bgColor }) => (bgColor ? bgColor : "lightcyan")};
     border-radius: 50%;
   }
 `;
@@ -70,7 +70,7 @@ const LinkArea = styled.div`
   }
 `;
 
-const ContactWrapper = styled.div`
+const ContactWrapper = styled.div<{ bgColor: string }>`
   position: absolute;
   height: 1rem;
   width: 1rem;
@@ -79,7 +79,7 @@ const ContactWrapper = styled.div`
   font-size: 1rem;
 
   :hover {
-    background-color: ${() => randColor()};
+    background-color: ${({ bgColor }) => (bgColor ? bgColor : "lightcyan")};
     border-radius: 50%;
   }
 `;
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
       <Wrapper>
         <OuterContainer>
           <Container>
-            <IconWrapper>
+            <IconWrapper bgColor={randColor()}>
               <Link href="/portfolio" aria-label="Photos">
                 <LinkArea>
                   👁️
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
               </Link>
             </IconWrapper>
 
-            <IconWrapper>
+            <IconWrapper bgColor={randColor()}>
               <Link href="/photos" aria-label="Photos">
                 <LinkArea>
                   📷
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
               </Link>
             </IconWrapper>
 
-            <IconWrapper aria-label="Instagram">
+            <IconWrapper bgColor={randColor()}>
               <a
                 href="https://www.instagram.com/bu8ki"
                 target="_blank"
@@ -122,7 +122,7 @@ const Home: NextPage = () => {
               </a>
             </IconWrapper>
 
-            <IconWrapper aria-label="Instagram">
+            <IconWrapper bgColor={randColor()}>
               <a
                 href="https://www.instagram.com/tete_a_tet.e"
                 target="_blank"
@@ -136,7 +136,7 @@ const Home: NextPage = () => {
             </IconWrapper>
           </Container>
 
-          <ContactWrapper>
+          <ContactWrapper bgColor={randColor()}>
             <a href="mailto:sandrosulab@gmail.com" aria-label="Sandro's email">
               @
             </a>
