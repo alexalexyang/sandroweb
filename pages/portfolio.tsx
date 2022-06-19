@@ -50,7 +50,7 @@ const Portfolio: NextPage = () => {
         <Col>
           <IconWrapper bgColor={randColor()}>
             <Link href="/" aria-label="Home page">
-              🏠
+              <a>🏠</a>
             </Link>
           </IconWrapper>
 
@@ -59,10 +59,11 @@ const Portfolio: NextPage = () => {
               <Image
                 key={name}
                 src={`/portfolio/${name}.jpg`}
-                alt="Picture of the author"
+                alt=""
                 width={"1920px"}
                 height={"1080px"}
                 layout="responsive"
+                tabIndex={0}
               />
             ))}
           </PhotosWrapper>

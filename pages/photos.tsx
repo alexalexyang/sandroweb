@@ -46,7 +46,7 @@ const Photos: NextPage = () => {
         <Col>
           <IconWrapper bgColor={randColor()}>
             <Link href="/" aria-label="Home page">
-              🏠
+              <a>🏠</a>
             </Link>
           </IconWrapper>
 
@@ -55,10 +55,11 @@ const Photos: NextPage = () => {
               <Image
                 key={name}
                 src={`/photos/${name}.jpg`}
-                alt="Picture of the author"
+                alt=""
                 width={"694px"}
                 height={"595px"}
                 layout="responsive"
+                tabIndex={0}
               />
             ))}
           </PhotosWrapper>

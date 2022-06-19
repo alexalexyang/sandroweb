@@ -108,11 +108,13 @@ const Home: NextPage = () => {
                   : randColor()
               }
             >
-              <Link href="/portfolio" aria-label="Photos">
-                <LinkArea>
-                  👁️
-                  <span>Portfolio</span>
-                </LinkArea>
+              <Link href="/portfolio">
+                <a>
+                  <LinkArea>
+                    👁️
+                    <span>Portfolio</span>
+                  </LinkArea>
+                </a>
               </Link>
             </IconWrapper>
 
@@ -123,11 +125,13 @@ const Home: NextPage = () => {
                   : randColor()
               }
             >
-              <Link href="/photos" aria-label="Photos">
-                <LinkArea>
-                  📷
-                  <span>Photos</span>
-                </LinkArea>
+              <Link href="/photos">
+                <a>
+                  <LinkArea>
+                    📷
+                    <span>Photos</span>
+                  </LinkArea>
+                </a>
               </Link>
             </IconWrapper>
 
