@@ -1,8 +1,10 @@
+import { getRandColors, randColor } from "../styles/util";
+import { useEffect, useState } from "react";
+
 import Link from "next/link";
 import type { NextPage } from "next";
 import SEO from "../components/seo";
 import { breakpoints } from "../styles/constants";
-import { randColor } from "../styles/util";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -85,13 +87,27 @@ const ContactWrapper = styled.div<{ bgColor: string }>`
 `;
 
 const Home: NextPage = () => {
+  const [randColors, setRandColors] = useState<string[]>();
+
+  useEffect(() => {
+    let colorsArr: string[] = [];
+    getRandColors(colorsArr, 5);
+    setRandColors(colorsArr);
+  }, []);
+
   return (
     <>
       <SEO />
       <Wrapper>
         <OuterContainer>
           <Container>
-            <IconWrapper bgColor={randColor()}>
+            <IconWrapper
+              bgColor={
+                randColors && randColors.length > 1
+                  ? randColors[0]
+                  : randColor()
+              }
+            >
               <Link href="/portfolio" aria-label="Photos">
                 <LinkArea>
                   👁️
@@ -100,7 +116,13 @@ const Home: NextPage = () => {
               </Link>
             </IconWrapper>
 
-            <IconWrapper bgColor={randColor()}>
+            <IconWrapper
+              bgColor={
+                randColors && randColors.length > 1
+                  ? randColors[1]
+                  : randColor()
+              }
+            >
               <Link href="/photos" aria-label="Photos">
                 <LinkArea>
                   📷
@@ -109,7 +131,13 @@ const Home: NextPage = () => {
               </Link>
             </IconWrapper>
 
-            <IconWrapper bgColor={randColor()}>
+            <IconWrapper
+              bgColor={
+                randColors && randColors.length > 1
+                  ? randColors[2]
+                  : randColor()
+              }
+            >
               <a
                 href="https://www.instagram.com/bu8ki"
                 target="_blank"
@@ -122,7 +150,13 @@ const Home: NextPage = () => {
               </a>
             </IconWrapper>
 
-            <IconWrapper bgColor={randColor()}>
+            <IconWrapper
+              bgColor={
+                randColors && randColors.length > 1
+                  ? randColors[3]
+                  : randColor()
+              }
+            >
               <a
                 href="https://www.instagram.com/tete_a_tet.e"
                 target="_blank"
@@ -136,7 +170,11 @@ const Home: NextPage = () => {
             </IconWrapper>
           </Container>
 
-          <ContactWrapper bgColor={randColor()}>
+          <ContactWrapper
+            bgColor={
+              randColors && randColors.length > 1 ? randColors[4] : randColor()
+            }
+          >
             <a href="mailto:sandrosulab@gmail.com" aria-label="Sandro's email">
               @
             </a>

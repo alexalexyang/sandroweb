@@ -45,3 +45,16 @@ const colors = [
 
 export const randColor = () =>
   colors[Math.floor(Math.random() * colors.length)];
+
+export const getRandColors = (colors: string[], num: number) => {
+  if (colors.length === num) {
+    return;
+  }
+  const color = randColor();
+
+  if (!colors.includes(color)) {
+    colors.push(color);
+  }
+
+  getRandColors(colors, num);
+};
